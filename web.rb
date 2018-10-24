@@ -49,7 +49,7 @@
 
   post '/ephemeral_keys' do
 
-    log_info("1")
+    
 
     authenticate!
 
@@ -80,13 +80,14 @@
 
     key.to_json
 
+    return log_info("1")
   end
 
   
 
 
   post '/charge' do
-    log_info("2")
+    
 
     authenticate!
 
@@ -146,7 +147,7 @@
 
     status 200
 
-    return log_info("Charge successfully created")
+    return log_info("Charge successfully created 1")
 
   end
 
@@ -210,7 +211,7 @@
 
   post '/create_charge' do
 
-    log_info("3")
+   
 
     # Create the charge on Stripe's servers
 
@@ -247,7 +248,7 @@
 
     status 200
 
-    return log_info("Charge successfully created")
+    return log_info("Charge successfully created 2")
 
   end
 
@@ -299,7 +300,7 @@
   
 
 
-    log_info("Payment Intent successfully created")
+    log_info("Payment Intent successfully created 3")
 
     status 200
 
@@ -320,7 +321,7 @@
 
   post '/stripe-webhook' do
 
-log_info("5")
+
     json = JSON.parse(request.body.read)
 
   
@@ -388,5 +389,7 @@ log_info("5")
     end
 
     status 200
+
+    return log_info("6")
 
   end
