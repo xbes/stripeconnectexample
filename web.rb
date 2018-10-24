@@ -57,7 +57,7 @@ post '/charge' do
       :description => "Example Charge",
       :shipping => payload[:shipping],
       :metadata => {
-        :order_id => '5278735C-1F40-407D-933A-286E463E72D9',
+        :order_id => '5278735C-1F40-407D-933A-286E463E72D8',
       }.merge(payload[:metadata] || {}),
     )
   rescue Stripe::StripeError => e
@@ -105,7 +105,7 @@ post '/create_charge' do
       :source => params[:source],
       :description => "Example Charge",
       :metadata => {
-        :order_id => '5278735C-1F40-407D-933A-286E463E72D7',
+        :order_id => '5278735C-1F40-407D-933A-286E463E72D8',
       }.merge(params[:metadata] || {}),
     )
   rescue Stripe::StripeError => e
@@ -130,7 +130,7 @@ post '/create_intent' do
       :description => params[:description] || 'Example PaymentIntent charge',
       :return_url => params[:return_url],
       :metadata => {
-        :order_id => '5278735C-1F40-407D-933A-286E463E72D6',
+        :order_id => '5278735C-1F40-407D-933A-286E463E72D8',
       }.merge(params[:metadata] || {}),
     )
   rescue Stripe::StripeError => e
@@ -168,7 +168,7 @@ post '/stripe-webhook' do
         :customer => source.metadata["customer"],
         :description => "Example Charge",
         :metadata => {
-          :order_id => '5278735C-1F40-407D-933A-286E463E72D5',
+          :order_id => '5278735C-1F40-407D-933A-286E463E72D8',
         }.merge(source.metadata || {}),
       )
     rescue Stripe::StripeError => e
