@@ -49,6 +49,8 @@
 
   post '/ephemeral_keys' do
 
+    log_info("1")
+
     authenticate!
 
     begin
@@ -84,6 +86,7 @@
 
 
   post '/charge' do
+    log_info("2")
 
     authenticate!
 
@@ -207,6 +210,8 @@
 
   post '/create_charge' do
 
+    log_info("3")
+
     # Create the charge on Stripe's servers
 
     begin
@@ -258,6 +263,8 @@
   # to prevent misuse
 
   post '/create_intent' do
+
+    log_info("4")
 
     begin
 
@@ -313,6 +320,7 @@
 
   post '/stripe-webhook' do
 
+log_info("5")
     json = JSON.parse(request.body.read)
 
   
