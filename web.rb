@@ -265,7 +265,7 @@
 
   post '/create_intent' do
 
-    log_info("4")
+    
 
     begin
 
@@ -390,6 +390,6 @@
 
     status 200
 
-    return log_info("6")
+
 
   end
